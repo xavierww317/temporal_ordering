@@ -32,8 +32,8 @@ args = parser.parse_args()
 if __name__ == '__main__':
     f = open('./result/alexnet/{}.csv'.format(args.batchsize), 'w', encoding='utf-8')
     f_writer = csv.writer(f)
-    # qp_list = [0, 12, 22, 32, 42, 51]
-    qp_list = [0]
+    qp_list = [0, 12, 22, 32, 42, 51]
+    # qp_list = [0]
 
     for qp in qp_list:
         device = torch.device('cuda:' + str(args.gpuid) if torch.cuda.is_available() else 'cpu')
